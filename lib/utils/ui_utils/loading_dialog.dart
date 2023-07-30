@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_circular.dart';
@@ -8,17 +9,15 @@ void showLoading({required BuildContext context}) {
     context: context,
     barrierDismissible: false,
     builder: (BuildContext context) {
-      return Dialog(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        child: Container(
+      return CupertinoAlertDialog(
+        title: Container(
           alignment: AlignmentDirectional.center,
           decoration: const BoxDecoration(),
           child: const Center(
             child: SizedBox(
               height: 70.0,
               width: 70.0,
-              child: CustomCircularProgressIndicator(strokeWidth: 6,),
+              child: CupertinoActivityIndicator(radius: 20,),
             ),
           ),
         ),

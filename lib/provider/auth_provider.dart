@@ -11,6 +11,9 @@ class AuthProvider with ChangeNotifier {
 
   final AuthService firebaseServices;
 
+  final bool isCheck = false;
+
+
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController userNameController = TextEditingController();
@@ -20,6 +23,8 @@ class AuthProvider with ChangeNotifier {
     emailController.clear();
     userNameController.clear();
   }
+
+
 
   signUpButtonPressed() {
     passwordController.clear();

@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:najot_shop/utils/colors/app_colors.dart';
 import 'package:provider/provider.dart';
 
 import '../../../provider/auth_provider.dart';
@@ -17,8 +18,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     User? user = context.watch<ProfileProvider>().currentUser;
 
+
     return Scaffold(
+      backgroundColor: AppColors.c_13181F,
       appBar: AppBar(
+        elevation: 0,
+        backgroundColor: AppColors.c_13181F,
         title: const Text("Profile"),
         actions: [
           IconButton(
@@ -43,7 +48,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 user?.email ?? "Empty",
                 style: const TextStyle(
                   fontSize: 24,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -52,7 +57,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 user?.displayName ?? "Empty",
                 style: const TextStyle(
                   fontSize: 24,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -61,7 +66,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 user?.phoneNumber ?? "Empty",
                 style: const TextStyle(
                   fontSize: 24,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -85,10 +90,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 textInputAction: TextInputAction.next,
                 textAlign: TextAlign.start,
                 controller: context.read<ProfileProvider>().emailController,
-                decoration: InputDecoration(
-                  hintText: "Email Update",
+              decoration: InputDecoration(
+              hintText: "Email Update",
 
-                )
+            )
             ),
             TextButton(
               onPressed: () {

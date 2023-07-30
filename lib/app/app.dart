@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:najot_shop/ui/auth/signin_screen.dart';
-import 'package:najot_shop/ui/tab/tab_box.dart';
+import 'package:najot_shop/ui/auth/auth_screen.dart';
+import 'package:najot_shop/ui/tab_admin/tab_box.dart';
 import 'package:provider/provider.dart';
 
 import '../provider/auth_provider.dart';
@@ -18,9 +18,9 @@ class App extends StatelessWidget {
           if (snapshot.hasError) {
             return Center(child: Text(snapshot.error.toString()));
           } else if (snapshot.data == null) {
-            return SignInScreen();
+            return AuthScreen();
           } else {
-            return TabBox();
+            return TabBoxAdmin();
           }
         },
       ),

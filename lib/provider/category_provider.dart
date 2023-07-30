@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:najot_shop/data/firebase/category_service.dart';
 import 'package:najot_shop/data/models/category/category_model.dart';
 import 'package:najot_shop/data/models/universal_data.dart';
@@ -9,6 +10,11 @@ class CategoryProvider with ChangeNotifier {
   CategoryProvider({required this.categoryService});
 
   final CategoryService categoryService;
+
+
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController descriptionController = TextEditingController();
+
 
   Future<void> addCategory({
     required BuildContext context,
@@ -84,4 +90,5 @@ class CategoryProvider with ChangeNotifier {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(error)));
     notifyListeners();
   }
+
 }
